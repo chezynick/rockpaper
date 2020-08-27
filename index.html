@@ -10,7 +10,76 @@
 
 </body>
 <script type= "text/javascript" >
+//create function that gives user a choice prompt and suggest answers
+function playerSelection(a) { 
+    prompt ('please select rock, paper or scissors?', a);
+    if (a = 'rock') {
+        let playerAnswer = (2);
+    }
+    else if (a = 'scissors') {
+let playerAnswer = (1);
+    }
+ else if (a = 'paper') {
+let playerAnswer = (3);
+ }
+ else if (a= '') {
+     return ('please enter a valid option')
+}
+}
 
+ //create computerplay function that will select a choice
+
+
+function randomInteger(min,max) {
+   let answer = Math.floor(Math.random() * 3) + 1;
+   if (answer == 1 ) {
+return ('computer chooses scissors') ;  
+   }
+   else if (answer == 2) {
+       return ('computer chooses rock');
+   }
+   else if (answer == 3) {
+       return (' computer chooses paper');
+   }
+}
+
+
+
+/*create if/else function that determines winner of both opitions
+ if */
+function result() {
+if (answer == playerAnswer) {
+    return ('draw!!');
+}
+else if (answer = 1 && playerAnswer == 3) {
+    return ('computer wins');
+}
+else if (answer = 1 && playerAnswer == 2) {
+    return ('player wins');
+}
+else if (answer = 2 && playerAnswer == 3)  {
+    return ('player wins')
+}
+else if (answer = 2 && playerAnswer == 1)  {
+    return ('computer wins')
+}
+else if (answer = 3 && playerAnswer == 1)   {
+    return ('player wins')
+}
+else if (answer = 3 && playerAnswer == 2)   {
+    return ('computer wins')
+
+}
+
+
+
+
+
+}
+
+//print result of round winner
+
+//run again and count rounds up until 5 and declare overall winner
 
 
 </script>
