@@ -26,6 +26,7 @@ function playerSelection() {
         } 
         else {
     alert ('error, please refresh the page and follow the instructions properly!');
+    playerSelection();
    }
 
  //create computerplay function that will select a choice
@@ -41,57 +42,66 @@ function computerAnswer(min,max) {
 
 if (answer == 1 && playerAnswer == 'paper') {
     console.log ('you chose Paper and the computer chose Scissors so Computer wins');
-    let update = computerScore + 1;
+    let update = computerScore +1;
     let player = playerScore;
-    console.log ('Your Score = ' + player + ' Computer Score = ' + update );
+    alert ('Your Score = ' + player + ' Computer Score = ' + update );
+    playerSelection();
 }
 else if (answer == 1 && playerAnswer == 'rock') {
     console.log ('you chose Rock and the computer chose scissors so You win!');
     let update = computerScore;
     let player = playerScore + 1;
-    console.log ('Your Score = ' + player + ' Computer Score = ' + update );
+    alert('Your Score = ' + player + ' Computer Score = ' + update );
+    playerSelection();
 }
 else if (answer == 1 && playerAnswer == 'scissors') {
     console.log (' You both chose Scissors so its A Draw');
     let update = computerScore;
     let player = playerScore;
-    console.log ('Your Score = ' + playerScore + ' Computer Score = ' + update );
+    alert ('Your Score = ' + playerScore + ' Computer Score = ' + update );
+    playerSelection();
 }
 else if (answer == 2 && playerAnswer == 'paper')  {
     console.log ('you chose paper and the computer chose scissors so You win!');
     let update = computerScore;
     let player = playerScore + 1;
-    console.log ('Your Score = ' + player + ' Computer Score = ' + update );
+    alert ('Your Score = ' + player + ' Computer Score = ' + update );
+    playerSelection();
 }
 else if (answer == 2 && playerAnswer == 'scissors')  {
     console.log ('you chose Scissors and the computer chose Rock so Computer wins');
     let update = computerScore + 1;
     let player = playerScore;
-    console.log ('Your Score = ' + playerScore + ' Computer Score = ' + update );
+    alert ('Your Score = ' + playerScore + ' Computer Score = ' + update );
+    playerSelection();
 }
 else if (answer == 2 && playerAnswer == 'rock') {
     console.log ('You both chose Rock so its A Draw!');
     let update = computerScore;
     let player = playerScore;
-    console.log ('Your Score = ' + playerScore + ' Computer Score = ' + update );
+    alert ('Your Score = ' + playerScore + ' Computer Score = ' + update );
+    playerSelection();
 }
 else if (answer == 3 && playerAnswer == 'scissors')   {
     console.log ('you chose scissors and the computer chose paper so You win!');
     let update = computerScore;
     let player = playerScore + 1;
-    console.log ('Your Score = ' + player + ' Computer Score = ' + update );
+    alert ('Your Score = ' + player + ' Computer Score = ' + update );
+    playerSelection();
 }
 else if (answer == 3 && playerAnswer == 'rock')   {
     console.log ('you chose Rock and the computer chose Paper so Computer wins');
     let update = computerScore + 1;
     let player = playerScore;
-    console.log ('Your Score = ' + playerScore + ' Computer Score = ' + update );
+    alert ('Your Score = ' + playerScore + ' Computer Score = ' + update );
+    playerSelection();
 }
 else if (answer == 3 && playerAnswer == 'paper') {
     console.log ('You both chose Paper so its A Draw!');
     let update = computerScore;
     let player = playerScore;
-    console.log ('Your Score = ' + playerScore + ' Computer Score = ' + update );
+    alert ('Your Score = ' + playerScore + ' Computer Score = ' + update );
+    playerSelection();
 }
 
 }
