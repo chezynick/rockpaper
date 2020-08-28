@@ -19,9 +19,14 @@
 playerSelection();
 //create function that gives user a choice prompt and suggest answers
 function playerSelection() {
-    const playerAnswer = prompt ('please select rock, paper or scissors?',' '); 
-    
-    computerAnswer();
+    let playerAnswer = prompt ('please select rock, paper or scissors?',' ').toLowerCase(); 
+    if (playerAnswer === 'rock' || 'paper' || 'scissors') {
+        computerAnswer();
+        } 
+        else {
+    alert ('error, please refresh the page and follow the instructions properly!');
+   }
+
  //create computerplay function that will select a choice
 
 
