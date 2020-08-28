@@ -11,13 +11,21 @@
 </body>
 <script type= "text/javascript" >
 //variables add in user and computer scorecards
+
+
+
+/*start game by calling function playGame() this will contain all other functions and scores in their zeroed form
+this will also be basis for the start of a new game - a return point*/
 let playerScore = 0 ;
 let computerScore = 0;
 
 
-//start game by calling function
+/*create 2nd function within playGame() which will be playRound - this will be the return point after each round and
+needs to have 2 variables which will hold the current score - this will also contain all other functions to make the game
+work - also this function will call the playerSelection() */
 
-playerSelection();
+    playerSelection();
+
 //create function that gives user a choice prompt and suggest answers
 function playerSelection() {
     let playerAnswer = prompt ('please select rock, paper or scissors?',' ').toLowerCase(); 
@@ -28,6 +36,7 @@ function playerSelection() {
     alert ('error, please refresh the page and follow the instructions properly!');
     playerSelection();
    }
+
 
  //create computerplay function that will select a choice
 
@@ -42,65 +51,55 @@ function computerAnswer(min,max) {
 
 if (answer == 1 && playerAnswer == 'paper') {
     console.log ('you chose Paper and the computer chose Scissors so Computer wins');
-    let update = computerScore +1;
-    let player = playerScore;
-    alert ('Your Score = ' + player + ' Computer Score = ' + update );
+    computerScore++;
+    alert ('Your Score = ' + playerScore + ' Computer Score = ' + computerScore );
     playerSelection();
 }
 else if (answer == 1 && playerAnswer == 'rock') {
     console.log ('you chose Rock and the computer chose scissors so You win!');
-    let update = computerScore;
-    let player = playerScore + 1;
-    alert('Your Score = ' + player + ' Computer Score = ' + update );
+    playerScore++;
+    alert('Your Score = ' + playerScore + ' Computer Score = ' + computerScore );
     playerSelection();
 }
 else if (answer == 1 && playerAnswer == 'scissors') {
     console.log (' You both chose Scissors so its A Draw');
-    let update = computerScore;
-    let player = playerScore;
-    alert ('Your Score = ' + playerScore + ' Computer Score = ' + update );
-    playerSelection();
+    
+    alert ('Your Score = ' + playerScore + ' Computer Score = ' + computerScore );
+    pplayerSelection();
 }
 else if (answer == 2 && playerAnswer == 'paper')  {
     console.log ('you chose paper and the computer chose scissors so You win!');
-    let update = computerScore;
-    let player = playerScore + 1;
-    alert ('Your Score = ' + player + ' Computer Score = ' + update );
+    playerScore++;
+    alert ('Your Score = ' + playerScore + ' Computer Score = ' + computerScore );
     playerSelection();
 }
 else if (answer == 2 && playerAnswer == 'scissors')  {
     console.log ('you chose Scissors and the computer chose Rock so Computer wins');
-    let update = computerScore + 1;
-    let player = playerScore;
-    alert ('Your Score = ' + playerScore + ' Computer Score = ' + update );
+    computerScore++;
+    alert ('Your Score = ' + playerScore + ' Computer Score = ' + computerScore );
     playerSelection();
 }
 else if (answer == 2 && playerAnswer == 'rock') {
     console.log ('You both chose Rock so its A Draw!');
-    let update = computerScore;
-    let player = playerScore;
-    alert ('Your Score = ' + playerScore + ' Computer Score = ' + update );
+    
+    alert ('Your Score = ' + playerScore + ' Computer Score = ' + computerScore );
     playerSelection();
 }
 else if (answer == 3 && playerAnswer == 'scissors')   {
     console.log ('you chose scissors and the computer chose paper so You win!');
-    let update = computerScore;
-    let player = playerScore + 1;
-    alert ('Your Score = ' + player + ' Computer Score = ' + update );
+    playerScore++;
+    alert ('Your Score = ' + playerScore + ' Computer Score = ' + computerScore );
     playerSelection();
 }
 else if (answer == 3 && playerAnswer == 'rock')   {
     console.log ('you chose Rock and the computer chose Paper so Computer wins');
-    let update = computerScore + 1;
-    let player = playerScore;
-    alert ('Your Score = ' + playerScore + ' Computer Score = ' + update );
+    computerScore++;
+    alert ('Your Score = ' + playerScore + ' Computer Score = ' + computerScore );
     playerSelection();
 }
 else if (answer == 3 && playerAnswer == 'paper') {
     console.log ('You both chose Paper so its A Draw!');
-    let update = computerScore;
-    let player = playerScore;
-    alert ('Your Score = ' + playerScore + ' Computer Score = ' + update );
+    alert ('Your Score = ' + playerScore + ' Computer Score = ' + computerScore );
     playerSelection();
 }
 
