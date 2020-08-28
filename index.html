@@ -10,8 +10,9 @@
 
 </body>
 <script type= "text/javascript" >
-//variables
-
+//variables add in user and computer scorecards
+let playerScore = 0 ;
+let computerScore = 0;
 
 
 //start game by calling function
@@ -20,7 +21,7 @@ playerSelection();
 //create function that gives user a choice prompt and suggest answers
 function playerSelection() {
     let playerAnswer = prompt ('please select rock, paper or scissors?',' ').toLowerCase(); 
-    if (playerAnswer === 'rock' || 'paper' || 'scissors') {
+    if (playerAnswer === 'rock' || playerAnswer === 'paper' || playerAnswer === 'scissors') {
         computerAnswer();
         } 
         else {
@@ -32,41 +33,71 @@ function playerSelection() {
 
 function computerAnswer(min,max) {
   const answer = Math.floor(Math.random() * 3) + 1;
-   
+ 
 
-/*create if/else function that determines winner of both opitions
- 1 = scissors 2 = rock 3=paper*/
+/*create if/else function that determines winner of both options
+ 1 = scissors 2 = rock 3=paper - also get 1 point added to either score/display the score and start the game again*/
 
 
 if (answer == 1 && playerAnswer == 'paper') {
     console.log ('you chose Paper and the computer chose Scissors so Computer wins');
+    let update = computerScore + 1;
+    let player = playerScore;
+    console.log ('Your Score = ' + player + ' Computer Score = ' + update );
 }
 else if (answer == 1 && playerAnswer == 'rock') {
     console.log ('you chose Rock and the computer chose scissors so You win!');
+    let update = computerScore;
+    let player = playerScore + 1;
+    console.log ('Your Score = ' + player + ' Computer Score = ' + update );
 }
 else if (answer == 1 && playerAnswer == 'scissors') {
     console.log (' You both chose Scissors so its A Draw');
+    let update = computerScore;
+    let player = playerScore;
+    console.log ('Your Score = ' + playerScore + ' Computer Score = ' + update );
 }
 else if (answer == 2 && playerAnswer == 'paper')  {
-    console.log ('you chose paper and the computer chose scissors so You win!')
+    console.log ('you chose paper and the computer chose scissors so You win!');
+    let update = computerScore;
+    let player = playerScore + 1;
+    console.log ('Your Score = ' + player + ' Computer Score = ' + update );
 }
 else if (answer == 2 && playerAnswer == 'scissors')  {
-    console.log ('you chose Scissors and the computer chose Rock so Computer wins')
+    console.log ('you chose Scissors and the computer chose Rock so Computer wins');
+    let update = computerScore + 1;
+    let player = playerScore;
+    console.log ('Your Score = ' + playerScore + ' Computer Score = ' + update );
 }
 else if (answer == 2 && playerAnswer == 'rock') {
     console.log ('You both chose Rock so its A Draw!');
+    let update = computerScore;
+    let player = playerScore;
+    console.log ('Your Score = ' + playerScore + ' Computer Score = ' + update );
 }
 else if (answer == 3 && playerAnswer == 'scissors')   {
-    console.log ('you chose scissors and the computer chose paper so You win!')
+    console.log ('you chose scissors and the computer chose paper so You win!');
+    let update = computerScore;
+    let player = playerScore + 1;
+    console.log ('Your Score = ' + player + ' Computer Score = ' + update );
 }
 else if (answer == 3 && playerAnswer == 'rock')   {
-    console.log ('you chose Rock and the computer chose Paper so Computer wins')
+    console.log ('you chose Rock and the computer chose Paper so Computer wins');
+    let update = computerScore + 1;
+    let player = playerScore;
+    console.log ('Your Score = ' + playerScore + ' Computer Score = ' + update );
 }
 else if (answer == 3 && playerAnswer == 'paper') {
     console.log ('You both chose Paper so its A Draw!');
+    let update = computerScore;
+    let player = playerScore;
+    console.log ('Your Score = ' + playerScore + ' Computer Score = ' + update );
 }
+
 }
+// create a function to determine if either player score has reached 5 and deliver winner message
 }
+
 
 
 
