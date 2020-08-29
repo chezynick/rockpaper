@@ -1,26 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-    
-<header>
+  <meta charset='UTF-8'/>
+  <title>Rock Paper Scissors</title>
+  <style>
+    *  {margin:0;padding:0;}
+body {background-image: url(/home/nick/pract/wallpaperflare.com_wallpaper.jpg); background-color:white;}
+.topbar {padding-top:20px;display:flex; flex-direction:row; justify-content: space-evenly;justify-items: center; width:100%; height:50px;align-items: center;}
+h1 {color:white; text-shadow:0 10px 10px black;}
 
+.playerscore {height:50px; width:50px; background-color: white;color:black; border: 10px solid black; border-radius:5px;}
+.computerscore {height:50px; width:50px; background-color: white;color:black;border: 10px solid black; border-radius:5px;}
+.messagebar {width:100%; height:100px; margin-top:50px;color:white; text-shadow:0 10px 10px black;  font-size:40px; display:flex; align-items: center;justify-content: center;}
+.choicebox {width:60%;height:100px;margin-top:30px;margin-left:auto;margin-right:auto;
+display:flex; justify-content: space-evenly; align-items: center;}
+.choice {width:100px; height:100px;display:block;background-color: white;color:black; border: 10px solid black; border-radius:5px;}
+
+  </style>
+<header>
+ 
 
 </header>
 
 <body>
-
+    <div class="topbar">
+<h1>Player Score</h1>
+<div class = "playerscore"></div>
+<div class = "computerscore"></div>
+<h1>Computer Score</h1>
+</div>
+<div class="messagebar"> Make Your Choice</div>
+<form class="choicebox">
+<button class="choice scissors" type="button"></button>
+<button class="choice rock" type="button"></button>
+<button class="choice paper" type="button"></button>
+</form>
 </body>
 <script type= "text/javascript" >
+
 //variables add in user and computer scorecards
 
-
-
-/*start game by calling function playGame() this will contain all other functions and scores in their zeroed form
-this will also be basis for the start of a new game - a return point*/
 let playerScore = 0 ;
 let computerScore = 0;
 
 
-/*create 2nd function within playGame() which will be playRound - this will be the return point after each round and
+/*create function within playGame() which will be playRound - this will be the return point after each round and
 needs to have 2 variables which will hold the current score - this will also contain all other functions to make the game
 work - also this function will call the playerSelection() */
 
