@@ -12,7 +12,7 @@ h1 {color:white; text-shadow:0 10px 10px black;}
 
 .playerscore {height:50px; width:50px; background-color: white;color:black; border: 10px solid black; border-radius:5px;}
 .computerscore {height:50px; width:50px; background-color: white;color:black;border: 10px solid black; border-radius:5px;}
-.messagebar {width:100%; height:100px; margin-top:50px;color:white; text-shadow:0 10px 10px black;  font-size:40px; display:flex; align-items: center;justify-content: center;}
+#messagebar {width:100%; height:100px; margin-top:50px;color:white; text-shadow:0 10px 10px black;  font-size:40px; display:flex; align-items: center;justify-content: center;}
 .choicebox {width:60%;height:100px;margin-top:30px;margin-left:auto;margin-right:auto;
 display:flex; justify-content: space-evenly; align-items: center;}
 .choice {width:120px; height:120px;display:block;background-color: white;color:black; border: 10px solid black; border-radius:5px;}
@@ -34,14 +34,15 @@ justify-content: center; align-self: center;color:white; font-size:40px;text-sha
 <div class = "computerscore scorebox"></div>
 <h1>Computer Score</h1>
 </div>
-<div class="messagebar"> Make Your Choice</div>
+<div id="messagebar"> Make Your Choice</div>
 <form class="choicebox">
 <button class="choice scissors" type="button"><img src="scissors.png" alt="scissors"/></button>
 <button class="choice rock" type="button"><img src="rock.png" alt ="rock"/></button>
 <button class="choice paper" type="button"><img src="paper.png" alt="paper"?></button>
 </form>
 <div id="resultBox"></div>
-</body>
+<button id="nextround" type="button" >Next Round</button>
+
 
 <script type= "text/javascript" >
 //add function to open screen prior to starting game
@@ -85,61 +86,78 @@ if (answer == 1 && playerAnswer == 'paper') {
     document.getElementById("resultBox").innerHTML = "you chose Paper and the computer chose Scissors so Computer wins";
     computerScore++;
     alert ('Your Score = ' + playerScore + ' Computer Score = ' + computerScore );
-    playerSelection();
+    result();
 }
 else if (answer == 1 && playerAnswer == 'rock') {
     document.getElementById("resultBox").innerHTML ='you chose Rock and the computer chose scissors so You win!';
     playerScore++;
     alert('Your Score = ' + playerScore + ' Computer Score = ' + computerScore );
-    playerSelection();
+    result();
 }
 else if (answer == 1 && playerAnswer == 'scissors') {
     document.getElementById("resultBox").innerHTML =' You both chose Scissors so its A Draw';
-    
     alert ('Your Score = ' + playerScore + ' Computer Score = ' + computerScore );
-    playerSelection();
+    result();
 }
 else if (answer == 2 && playerAnswer == 'paper')  {
     document.getElementById("resultBox").innerHTML ='you chose paper and the computer chose scissors so You win!';
     playerScore++;
     alert ('Your Score = ' + playerScore + ' Computer Score = ' + computerScore );
-    playerSelection();
+    result();
 }
 else if (answer == 2 && playerAnswer == 'scissors')  {
     document.getElementById("resultBox").innerHTML  ='you chose Scissors and the computer chose Rock so Computer wins';
     computerScore++;
     alert ('Your Score = ' + playerScore + ' Computer Score = ' + computerScore );
-    playerSelection();
+    result();
 }
 else if (answer == 2 && playerAnswer == 'rock') {
     document.getElementById("resultBox").innerHTML ='You both chose Rock so its A Draw!';
-    
     alert ('Your Score = ' + playerScore + ' Computer Score = ' + computerScore );
-    playerSelection();
+    result();
 }
 else if (answer == 3 && playerAnswer == 'scissors')   {
     document.getElementById("resultBox").innerHTML ='you chose scissors and the computer chose paper so You win!';
     playerScore++;
     alert ('Your Score = ' + playerScore + ' Computer Score = ' + computerScore );
-    playerSelection();
+    result();
 }
 else if (answer == 3 && playerAnswer == 'rock')   {
     document.getElementById("resultBox").innerHTML  = 'you chose Rock and the computer chose Paper so Computer wins';
     computerScore++;
     alert ('Your Score = ' + playerScore + ' Computer Score = ' + computerScore );
-    playerSelection();
+    result();
 }
 else if (answer == 3 && playerAnswer == 'paper') {
     document.getElementById("resultBox").innerHTML ='You both chose Paper so its A Draw!';
     alert ('Your Score = ' + playerScore + ' Computer Score = ' + computerScore );
-    playerSelection();
+    result();
 }
 
 
+
+/* create a function to determine if either player score has reached 5 and deliver winner message
+if computer or player has reached 3 then declare winner- else "onclick" start next round
+*/
+function result() {
+if (playerScore === 3) {
+    alert('YOU WON!!!');
+    location.window.onload();
+    
 }
-// create a function to determine if either player score has reached 5 and deliver winner message
+if (computerScore === 3) {
+    alert('YOU LOSE!!!');
+    location.window.onload();
+}
+else {
+    playerSelection()
+}
+
 }
 }
+}
+}
+
 
 
 
@@ -152,5 +170,5 @@ else if (answer == 3 && playerAnswer == 'paper') {
 
 
 </script>
-
+</body>
 </html>
