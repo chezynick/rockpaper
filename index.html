@@ -13,14 +13,17 @@ p {color:white; text-shadow:0 10px 10px black;}
 #playerscore {height:50px; width:50px; background-color: white;color:black; border: 10px solid black; border-radius:5px;}
 #computerscore {height:50px; width:50px; background-color: white;color:black;border: 10px solid black; border-radius:5px;}
 #messagebar {width:80%; height:100px; margin-top:50px;color:white; text-shadow:0 10px 10px black;  font-size:40px; margin-left:auto;margin-right:auto;
-display:flex; align-items: center;justify-content: center; text-align:center;}
+    display:flex; align-items: center;justify-content: center; text-align:center;}
 .choicebox {width:60%;height:100px;margin-top:30px;margin-left:auto;margin-right:auto;
-display:flex; justify-content: space-evenly; align-items: center;}
+    display:flex; justify-content: space-evenly; align-items: center;}
 /*.choice {width:120px; height:120px;display:block;background-color: white;color:black; border: 10px solid black; border-radius:5px;}*/
 .scorebox {display:flex; justify-content: center;align-items: center; font-size:30px;}
 button.hover {border-color:rgb(218, 23, 23);}
 #resultBox {margin-top:80px;margin-left:5%; margin-right:5%;width:90%; display:flex; align-items: center;
-justify-content: center; align-self: center;color:white; font-size:40px;text-shadow:0 10px 10px black; text-align: center;}
+    justify-content: center; align-self: center;color:white; font-size:40px;text-shadow:0 10px 10px black; text-align: center;}
+.footer {position: fixed; bottom:0; margin-bottom:5px; width:100%;}
+#playAgain {display:flex;
+    justify-content: center; align-items: center;margin-left:auto;margin-right:auto; text-align: center;}
   </style>
 
 <header>
@@ -45,6 +48,9 @@ justify-content: center; align-self: center;color:white; font-size:40px;text-sha
 
 </form>
 <div id="resultBox"></div>
+<form class="footer">
+    <button  id="playAgain" type="button">Play Again</button>
+</form>
 
 
 
@@ -68,7 +74,8 @@ function player(){
     document.getElementById('scissors').addEventListener('click', scissors);
     document.getElementById('rock').addEventListener('click', rock);
     document.getElementById('paper').addEventListener('click', paper);
-    
+    document.getElementById('playAgain').addEventListener('click', startAgain);
+
     function scissors() {
         playerAnswer = "scissors";
         console.log ('playerAnswer');
@@ -83,6 +90,9 @@ function player(){
         playerAnswer = "paper";
         console.log ('playerAnswer');
         computerAnswer();
+    }
+    function startAgain(){
+        location.reload();
     }
  
  //create computerplay function that will select a choice
@@ -175,11 +185,13 @@ function result() {
 if (playerScore === 3) {
     document.getElementById("messagebar").innerHTML = "!!YOU WIN!!";
     location.window.onload();
+    document.getElementById('playAgain').addEventListener('click', reload());
     
 }
 if (computerScore === 3) {
     document.getElementById("messagebar").innerHTML = "!!YOU LOSE!!";
     location.window.onload();
+    document.getElementById('playAgain').addEventListener('click', reload());
 }
 else {
     playerSelection()
