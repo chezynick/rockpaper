@@ -15,7 +15,7 @@ p {color:white; text-shadow:0 10px 10px black;}
 #messagebar {width:100%; height:100px; margin-top:50px;color:white; text-shadow:0 10px 10px black;  font-size:40px; display:flex; align-items: center;justify-content: center;}
 .choicebox {width:60%;height:100px;margin-top:30px;margin-left:auto;margin-right:auto;
 display:flex; justify-content: space-evenly; align-items: center;}
-.choice {width:120px; height:120px;display:block;background-color: white;color:black; border: 10px solid black; border-radius:5px;}
+/*.choice {width:120px; height:120px;display:block;background-color: white;color:black; border: 10px solid black; border-radius:5px;}*/
 .scorebox {display:flex; justify-content: center;align-items: center; font-size:30px;}
 button.hover {border-color:rgb(218, 23, 23);}
 #resultBox {margin-top:80px;margin-left:5%; margin-right:5%;width:90%; display:flex; align-items: center;
@@ -37,9 +37,11 @@ justify-content: center; align-self: center;color:white; font-size:40px;text-sha
 </div>
 <div id="messagebar"> Make Your Choice</div>
 <form class="choicebox">
-<button class="choice" id="scissors" type="button" onclick="playerSelection()" ><img src="scissors.png" alt="scissors"/></button>
-<button class="choice" id= "rock" type="button" onclick="playerSelection()"><img src="rock.png" alt ="rock"/></button>
-<button class="choice" id="paper" type="button" onclick="playerSelection()" ><img src="paper.png" alt="paper"?></button>
+
+<button class="choice" id="scissors" type="button" ><img src="scissors.png" alt="scissors"/></button>
+<button class="choice" id= "rock" type="button" ><img src="rock.png" alt ="rock"/></button>
+<button class="choice" id="paper" type="button" ><img src="paper.png" alt="paper"/></button>
+
 </form>
 <div id="resultBox"></div>
 
@@ -49,9 +51,6 @@ justify-content: center; align-self: center;color:white; font-size:40px;text-sha
 //add function to open screen prior to starting game
 let playerScore = 0 ;
 let computerScore = 0;
-let answer;
-let playerAnswer;
-
 
 //variables add in user and computer scorecards
 
@@ -63,30 +62,28 @@ document.getElementById("computerscore").innerHTML= computerScore;
 needs to have 2 variables which will hold the current score - this will also contain all other functions to make the game
 work  */
 
-  
-
-//create function that gives user a choice prompt and suggest answers
-function playerSelection() {
-    document.getElementById("scissors").addEventListener("click",scissors())
-    function scissors(){
-       let playerAnswer = "scissors";
-       console.log (playerAnswer);
-       computerAnswer();
-    }
-    document.getElementById("rock").onclick = function rock() { 
-     let playerAnswer = "rock";
-     console.log (playerAnswer);
-     computerAnswer();
-    }
-    document.getElementById("paper").onclick = function paper() {
-        let playerAnswer = "paper";
-        console.log (playerAnswer);
+player()
+function player(){
+    document.getElementById('scissors').addEventListener('click', scissors);
+    document.getElementById('rock').addEventListener('click', rock);
+    document.getElementById('paper').addEventListener('click', paper);
+    
+    function scissors() {
+        playerAnswer = "scissors";
+        console.log ('playerAnswer');
         computerAnswer();
     }
-
-
-
-
+    function rock() {
+        playerAnswer = "rock";
+        console.log ('playerAnswer');
+        computerAnswer();
+    }
+    function paper() {
+        playerAnswer = "paper";
+        console.log ('playerAnswer');
+        computerAnswer();
+    }
+ 
  //create computerplay function that will select a choice
 
 
