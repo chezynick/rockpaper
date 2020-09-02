@@ -12,7 +12,8 @@ h1 {color:white; text-shadow:0 10px 10px black;}
 p {color:white; text-shadow:0 10px 10px black;}
 #playerscore {height:50px; width:50px; background-color: white;color:black; border: 10px solid black; border-radius:5px;}
 #computerscore {height:50px; width:50px; background-color: white;color:black;border: 10px solid black; border-radius:5px;}
-#messagebar {width:100%; height:100px; margin-top:50px;color:white; text-shadow:0 10px 10px black;  font-size:40px; display:flex; align-items: center;justify-content: center;}
+#messagebar {width:80%; height:100px; margin-top:50px;color:white; text-shadow:0 10px 10px black;  font-size:40px; margin-left:auto;margin-right:auto;
+display:flex; align-items: center;justify-content: center; text-align:center;}
 .choicebox {width:60%;height:100px;margin-top:30px;margin-left:auto;margin-right:auto;
 display:flex; justify-content: space-evenly; align-items: center;}
 /*.choice {width:120px; height:120px;display:block;background-color: white;color:black; border: 10px solid black; border-radius:5px;}*/
@@ -35,7 +36,7 @@ justify-content: center; align-self: center;color:white; font-size:40px;text-sha
 <div id = "computerscore" class = "scorebox"></div>
 <h1>Computer</h1>
 </div>
-<div id="messagebar"> Make Your Choice</div>
+<div id="messagebar"> Best of 3 - Pick your weapon!</div>
 <form class="choicebox">
 
 <button class="choice" id="scissors" type="button" ><img src="scissors.png" alt="scissors"/></button>
@@ -97,6 +98,7 @@ function computerAnswer(min,max) {
 
 if (answer == 1 && playerAnswer == 'paper') {
     document.getElementById("resultBox").innerHTML = "you chose Paper and the computer chose Scissors so Computer wins";
+    document.getElementById("messagebar").innerHTML = "You shame your family..Try again!";
     computerScore++;
     document.getElementById("playerscore").innerHTML= playerScore;
     document.getElementById("computerscore").innerHTML= computerScore;
@@ -104,6 +106,7 @@ if (answer == 1 && playerAnswer == 'paper') {
 }
 else if (answer == 1 && playerAnswer == 'rock') {
     document.getElementById("resultBox").innerHTML ='you chose Rock and the computer chose scissors so You win!';
+    document.getElementById("messagebar").innerHTML = "slap that computer down- finish him!";
     playerScore++;
     document.getElementById("playerscore").innerHTML= playerScore;
     document.getElementById("computerscore").innerHTML= computerScore;
@@ -111,13 +114,14 @@ else if (answer == 1 && playerAnswer == 'rock') {
 }
 else if (answer == 1 && playerAnswer == 'scissors') {
     document.getElementById("resultBox").innerHTML =' You both chose Scissors so its A Draw';
-    
+    document.getElementById("messagebar").innerHTML = "scissor sisters- have another go!";
     document.getElementById("playerscore").innerHTML= playerScore;
     document.getElementById("computerscore").innerHTML= computerScore;
     result();
 }
 else if (answer == 2 && playerAnswer == 'paper')  {
-    document.getElementById("resultBox").innerHTML ='you chose paper and the computer chose scissors so You win!';
+    document.getElementById("resultBox").innerHTML ='you chose paper and the computer chose Rock so You win!';
+    document.getElementById("messagebar").innerHTML = "rip out his spinal column...err finish him!";
     playerScore++;
     document.getElementById("playerscore").innerHTML= playerScore;
     document.getElementById("computerscore").innerHTML= computerScore;
@@ -125,6 +129,7 @@ else if (answer == 2 && playerAnswer == 'paper')  {
 }
 else if (answer == 2 && playerAnswer == 'scissors')  {
     document.getElementById("resultBox").innerHTML  ='you chose Scissors and the computer chose Rock so Computer wins';
+    document.getElementById("messagebar").innerHTML = "you suck and deserve to lose - pick better!";
     computerScore++;
     document.getElementById("playerscore").innerHTML= playerScore;
     document.getElementById("computerscore").innerHTML= computerScore;
@@ -132,12 +137,14 @@ else if (answer == 2 && playerAnswer == 'scissors')  {
 }
 else if (answer == 2 && playerAnswer == 'rock') {
     document.getElementById("resultBox").innerHTML ='You both chose Rock so its A Draw!';
+    document.getElementById("messagebar").innerHTML = "You should have picked a bigger rock! go again";
     document.getElementById("playerscore").innerHTML= playerScore;
     document.getElementById("computerscore").innerHTML= computerScore;  
     result();
 }
 else if (answer == 3 && playerAnswer == 'scissors')   {
     document.getElementById("resultBox").innerHTML ='you chose scissors and the computer chose paper so You win!';
+    document.getElementById("messagebar").innerHTML = "the sword is mightier than the pen it turns out, destroy him!";
     playerScore++;
     document.getElementById("playerscore").innerHTML= playerScore;
     document.getElementById("computerscore").innerHTML= computerScore;
@@ -145,6 +152,7 @@ else if (answer == 3 && playerAnswer == 'scissors')   {
 }
 else if (answer == 3 && playerAnswer == 'rock')   {
     document.getElementById("resultBox").innerHTML  = 'you chose Rock and the computer chose Paper so Computer wins';
+    document.getElementById("messagebar").innerHTML = "paper?? you picked paper? ffs- have another go!";
     computerScore++;
     document.getElementById("playerscore").innerHTML= playerScore;
     document.getElementById("computerscore").innerHTML= computerScore;
@@ -152,6 +160,7 @@ else if (answer == 3 && playerAnswer == 'rock')   {
 }
 else if (answer == 3 && playerAnswer == 'paper') {
     document.getElementById("resultBox").innerHTML ='You both chose Paper so its A Draw!';
+    document.getElementById("messagebar").innerHTML = "This isnt a library, have another go!";
     document.getElementById("playerscore").innerHTML= playerScore;
     document.getElementById("computerscore").innerHTML= computerScore;
     result();
@@ -164,12 +173,12 @@ if computer or player has reached 3 then declare winner- else "onclick" start ne
 */
 function result() {
 if (playerScore === 3) {
-    alert('YOU WON!!!');
+    document.getElementById("messagebar").innerHTML = "!!YOU WIN!!";
     location.window.onload();
     
 }
 if (computerScore === 3) {
-    alert('YOU LOSE!!!');
+    document.getElementById("messagebar").innerHTML = "!!YOU LOSE!!";
     location.window.onload();
 }
 else {
