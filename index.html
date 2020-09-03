@@ -184,16 +184,13 @@ if computer or player has reached 3 then declare winner- else "onclick" start ne
 */
 function result() {
 if (playerScore === 3) {
-    document.getElementById("messagebar").innerHTML = "!!YOU WIN!!";
-    document.getElementsByClassName('choice').disabled = true;
-    document.getElementById('playAgain').addEventListener('click', reload());
-    
+    document.getElementById("messagebar").innerHTML = "!!YOU WIN!!";   
 }
 if (computerScore === 3) {
     document.getElementById("messagebar").innerHTML = "!!YOU LOSE!!";
-    document.getElementsByClassName('choice').disabled = true;
-    
-    document.getElementById('playAgain').addEventListener('click', reload());
+}
+if (playerScore > 3 || computerScore > 3){
+    startAgain();
 }
 else {
     playerSelection()
