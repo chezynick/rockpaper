@@ -21,9 +21,9 @@ p {color:white; text-shadow:0 10px 10px black;}
 button.hover {border-color:rgb(218, 23, 23);}
 #resultBox {margin-top:80px;margin-left:5%; margin-right:5%;width:90%; display:flex; align-items: center;
     justify-content: center; align-self: center;color:white; font-size:40px;text-shadow:0 10px 10px black; text-align: center;}
-.footer {position: fixed; bottom:0; margin-bottom:5px; width:100%;}
-#playAgain {display:flex;
-    justify-content: center; align-items: center;margin-left:auto;margin-right:auto; text-align: center;}
+.footer {position: fixed; bottom:0; margin-bottom:2%; width:100%;}
+#playAgain {display:flex;justify-content: center; align-items: center;margin-left:auto;margin-right:auto; text-align: center; 
+    background:white; color:black;border: 5px solid black; border-radius:2px;font-size:18px; font-family:shojumaru-6ZIM;}
   </style>
 
 <header>
@@ -49,7 +49,7 @@ button.hover {border-color:rgb(218, 23, 23);}
 </form>
 <div id="resultBox"></div>
 <form class="footer">
-    <button  id="playAgain" type="button">Play Again</button>
+    <button  id="playAgain" type="button">Play Again?</button>
 </form>
 
 
@@ -71,6 +71,7 @@ work  */
 
 player()
 function player(){
+    
     document.getElementById('scissors').addEventListener('click', scissors);
     document.getElementById('rock').addEventListener('click', rock);
     document.getElementById('paper').addEventListener('click', paper);
@@ -108,7 +109,7 @@ function computerAnswer(min,max) {
 
 if (answer == 1 && playerAnswer == 'paper') {
     document.getElementById("resultBox").innerHTML = "you chose Paper and the computer chose Scissors so Computer wins";
-    document.getElementById("messagebar").innerHTML = "You shame your family..Try again!";
+    document.getElementById("messagebar").innerHTML = "paper?? you picked paper? ffs- have another go!";
     computerScore++;
     document.getElementById("playerscore").innerHTML= playerScore;
     document.getElementById("computerscore").innerHTML= computerScore;
@@ -162,7 +163,7 @@ else if (answer == 3 && playerAnswer == 'scissors')   {
 }
 else if (answer == 3 && playerAnswer == 'rock')   {
     document.getElementById("resultBox").innerHTML  = 'you chose Rock and the computer chose Paper so Computer wins';
-    document.getElementById("messagebar").innerHTML = "paper?? you picked paper? ffs- have another go!";
+    document.getElementById("messagebar").innerHTML = "You shame your family! go again";
     computerScore++;
     document.getElementById("playerscore").innerHTML= playerScore;
     document.getElementById("computerscore").innerHTML= computerScore;
@@ -184,13 +185,13 @@ if computer or player has reached 3 then declare winner- else "onclick" start ne
 function result() {
 if (playerScore === 3) {
     document.getElementById("messagebar").innerHTML = "!!YOU WIN!!";
-    document.getElementsByClassName('choice').disabled = true
+    document.getElementsByClassName('choice').disabled = true;
     document.getElementById('playAgain').addEventListener('click', reload());
     
 }
 if (computerScore === 3) {
     document.getElementById("messagebar").innerHTML = "!!YOU LOSE!!";
-    document.getElementsByClassName('choice').disabled = true
+    document.getElementsByClassName('choice').disabled = true;
     
     document.getElementById('playAgain').addEventListener('click', reload());
 }
