@@ -52,8 +52,8 @@ button.hover {border-color:rgb(218, 23, 23);}
     <button  id="playAgain" type="button">Play Again?</button>
 </form>
 <audio class = 'kick' src='kick.wav'></audio>
-<audio class = 'snare' src='snare.wav'></audio>
-<audio class = 'clap' src='clap.wav'></audio>
+
+<audio class = 'endgame' src='gong.wav'></audio>
 
 <script type= "text/javascript" >
 //add function to open screen prior to starting game
@@ -87,13 +87,13 @@ function player(){
     }
     function rock() {
         playerAnswer = "rock";
-        const audio = document.querySelector('.clap');
+        const audio = document.querySelector('.kick');
         audio.play();
         computerAnswer();
     }
     function paper() {
         playerAnswer = "paper";
-        const audio = document.querySelector('.snare');
+        const audio = document.querySelector('.kick');
         audio.play();
         computerAnswer();
     }
@@ -190,9 +190,17 @@ if computer or player has reached 3 then declare winner- else "onclick" start ne
 function result() {
 if (playerScore === 3) {
     document.getElementById("messagebar").innerHTML = "!!YOU WIN!!";   
+    const audio = document.querySelector('.endgame');
+        audio.play();
+        const finishGame = document.querySelector('.choicebox');
+finishGame.innerHTML= '';
 }
 if (computerScore === 3) {
     document.getElementById("messagebar").innerHTML = "!!YOU LOSE!!";
+    const audio = document.querySelector('.endgame');
+        audio.play();
+        const finishGame = document.querySelector('.choicebox');
+finishGame.innerHTML= '';
 }
 if (playerScore > 3 || computerScore > 3){
     startAgain();
