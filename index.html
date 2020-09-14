@@ -51,8 +51,9 @@ button.hover {border-color:rgb(218, 23, 23);}
 <form class="footer">
     <button  id="playAgain" type="button">Play Again?</button>
 </form>
-
-
+<audio class = 'kick' src='kick.wav'></audio>
+<audio class = 'snare' src='snare.wav'></audio>
+<audio class = 'clap' src='clap.wav'></audio>
 
 <script type= "text/javascript" >
 //add function to open screen prior to starting game
@@ -79,17 +80,21 @@ function player(){
 
     function scissors() {
         playerAnswer = "scissors";
-        console.log ('playerAnswer');
+        const audio = document.querySelector('.kick');
+        audio.play();
+       
         computerAnswer();
     }
     function rock() {
         playerAnswer = "rock";
-        console.log ('playerAnswer');
+        const audio = document.querySelector('.clap');
+        audio.play();
         computerAnswer();
     }
     function paper() {
         playerAnswer = "paper";
-        console.log ('playerAnswer');
+        const audio = document.querySelector('.snare');
+        audio.play();
         computerAnswer();
     }
     function startAgain(){
